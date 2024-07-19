@@ -541,6 +541,7 @@ class PlayState extends MusicBeatState
 
 	public static var shaggyVoice:Bool = false;
 	var isShaggy:Bool = false;
+	var isCatBF:Bool = false;
 	var legs:FlxSprite;
 	var shaggyT:FlxTrail;
 	var legT:FlxTrail;
@@ -1241,6 +1242,7 @@ class PlayState extends MusicBeatState
 		bfGroup.add(boyfriend);
 
 		isShaggy = boyfriend.curCharacter == 'shaggy' || boyfriend.curCharacter == 'supershaggy' || boyfriend.curCharacter == 'godshaggy' || boyfriend.curCharacter == 'redshaggy';
+		isCatBF = boyfriend.curCharacter == 'bf-cat';
 		comboGroup = new FlxSpriteGroup();
 		add(comboGroup);
 		switch (stageCheck)
@@ -1249,6 +1251,7 @@ class PlayState extends MusicBeatState
 				dad.x -= 500;
 				dad.y -= 100;
 				if (isShaggy) boyfriend.y += 150;
+				if (isCatBF) boyfriend.setPosition(770, 100);
 				if (boyfriend.curCharacter == 'godshaggy') boyfriend.x += 300;
 			case 'roof':
 				dad.setPosition(-3, 467);
@@ -1261,32 +1264,39 @@ class PlayState extends MusicBeatState
 			case 'farm' | 'farm-night'| 'farm-sunset':
 				dad.x += 200;
 				if (isShaggy) boyfriend.x += 150;
+				if (isCatBF) boyfriend.x += 150;
 			case 'house' | 'house-night' | 'house-sunset':
 				dad.setPosition(50, 270);
 				if (dadmirror != null)
 				{
 					dadmirror.setPosition(dad.x - 50, dad.y);
 				}
+				if (isCatBF) boyfriend.setPosition(770, 100);
 				boyfriend.setPosition(843, 270);
 				gf.setPosition(300, -60);
 			case 'backyard':
 				dad.setPosition(50, 300);
+				if (isCatBF) boyfriend.setPosition(770, 100);
 				boyfriend.setPosition(790, 300);
 				gf.setPosition(500, -100);
 			case 'festival':
 				gf.x -= 200;
+				if (isCatBF) boyfriend.setPosition(770, 100);
 				if (!isShaggy) boyfriend.x -= 200;
 			case 'bedroom':
 				dad.setPosition(-254, 577);
+				if (isCatBF) boyfriend.setPosition(770, 100);
 				boyfriend.setPosition(607, 786);
 			case 'master':
 				dad.setPosition(52, -166);
 				boyfriend.setPosition(1152, 311);
+				if (isCatBF) boyfriend.setPosition(770, 100);
 				if (isShaggy) boyfriend.setPosition(1002, 241);
 				gf.setPosition(807, -22);
 			case 'desert':
 				dad.y -= 160;
 				dad.x -= 350;
+				if (isCatBF) boyfriend.setPosition(770, 100);
 				boyfriend.x -= 275;
 				boyfriend.y -= 160;
 			case 'office':
@@ -1300,9 +1310,11 @@ class PlayState extends MusicBeatState
 				boyfriend.setPosition(837, 363);
 			case 'exbungo-land':
 				dad.setPosition(298, 131);
+				if (isCatBF) boyfriend.setPosition(770, 100);
 				boyfriend.setPosition(1332, 513);
 				gf.setPosition(756, 206);
 			case 'freeplay':
+				if (isCatBF) boyfriend.setPosition(770, 100);
 				if (isShaggy) boyfriend.y += 200;
 				if (boyfriend.curCharacter == 'godshaggy') boyfriend.x += 300;
 			case 'red-void':
@@ -1310,15 +1322,19 @@ class PlayState extends MusicBeatState
 				{
 					dad.y -= 70;
 				}
+				if (isCatBF) boyfriend.setPosition(770, 100);
 				if (isShaggy) boyfriend.y += 50;
 			case 'interdimension-void':
+				if (isCatBF) boyfriend.setPosition(770, 100);
 				if (isShaggy) boyfriend.y += 100;
 			case 'green-void':
+				if (isCatBF) boyfriend.setPosition(770, 100);
 				if (isShaggy) {
 					boyfriend.x += 150;
 					boyfriend.y += 50;
 				}
 			case 'glitchy-void':
+				if (isCatBF) boyfriend.setPosition(770, 100);
 				if (isShaggy) {
 					boyfriend.x += 150;
 					boyfriend.y += 150;
