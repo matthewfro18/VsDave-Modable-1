@@ -120,9 +120,12 @@ class CharacterSelectState extends MusicBeatState
 	
 	public var characters:Array<CharacterInSelect> = 
 	[
-		/*new CharacterInSelect('bf', [1, 1, 1, 1], [
+		new CharacterInSelect('bf', [1, 1, 1, 1], [
 			new CharacterForm('bf', 'Boyfriend', [1,1,1,1]),
 			new CharacterForm('bf-pixel', 'Pixel Boyfriend', [1,1,1,1])
+		]),
+		new CharacterInSelect('bf-cat', [1, 1, 1, 1], [
+			new CharacterForm('bf-cat', 'Cat Boyfriend', [1,1,1,1]),
 		]),
 		new CharacterInSelect('dave', [0.25, 0.25, 2, 2], [
 			new CharacterForm('dave', 'Dave', [0.25, 0.25, 2, 2]),
@@ -148,7 +151,6 @@ class CharacterSelectState extends MusicBeatState
 			new CharacterForm('godshaggy', 'Shaggy (0.002%)', [1, 1, 1, 1]),
 			new CharacterForm('redshaggy', 'Red Shaggy', [1, 1, 1, 1]),
 		]),
-		*/
 	];
 	#if SHADERS_ENABLED
 	var bgShader:Shaders.GlitchEffect;
@@ -166,6 +168,7 @@ class CharacterSelectState extends MusicBeatState
 
 		inCS = true;
 		unlockCharacter('shaggy');
+		unlockCharacter('bf-cat');
 		if (PlayState.SONG.song.toLowerCase() == 'exploitation' && !FlxG.save.data.modchart)
 		{
 			if (FlxG.fullscreen)
