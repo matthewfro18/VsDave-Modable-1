@@ -252,6 +252,35 @@ class Character extends FlxSprite
 				nativelyPlayable = true;
 				flipX = true;
 				playAnim('firstDeath');
+			case 'bf-cat':
+				frames = Paths.getSparrowAtlas('characters/bfcat', 'shared');
+
+				animation.addByPrefix('idle', 'bfcat altidle', 24, false);
+				animation.addByPrefix('idle-alt', 'bfcat idle', 24, false);
+				animation.addByPrefix('singUP', 'bfcat up', 24, false);
+				animation.addByPrefix('singRIGHT', 'bfcat right', 24, false);
+				animation.addByPrefix('singDOWN', 'bfcat down', 24, false);
+				animation.addByPrefix('singLEFT', 'bfcat left', 24, false);
+				animation.addByPrefix('singUPmiss', 'bfcat missu', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'bfcat missr', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'bfcat missd', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'bfcat missl', 24, false);
+				animation.addByPrefix('hey', 'bfcat nice', 24, false);
+				animation.addByPrefix('ayo', 'bfcat ayo', 24, false);
+				animation.addByPrefix('firstDeath', "bfcat dead0", 24, false);
+				animation.addByPrefix('deathLoop', "bfcat deadidle", 24, true);
+				animation.addByPrefix('deathConfirm', "bfcat wakeywakey", 24, false);
+		
+				loadOffsetFile(curCharacter);
+				
+				globalOffset = [-200, 150];
+				barColor = FlxColor.fromRGB(49, 236, 255);
+
+				playAnim('idle');
+				antialiasing = false;
+				nativelyPlayable = true;
+				flipX = true;
+
 			case 'generic-death':
 				frames = Paths.getSparrowAtlas('ui/lose', 'shared');
 				animation.addByPrefix('firstDeath', "lose... instance 1", 24, false);
