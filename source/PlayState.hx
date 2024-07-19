@@ -1264,7 +1264,7 @@ class PlayState extends MusicBeatState
 			case 'farm' | 'farm-night'| 'farm-sunset':
 				dad.x += 200;
 				if (isShaggy) boyfriend.x += 150;
-				if (isCatBF) boyfriend.x += 150;
+				if (isCatBF) boyfriend.setPosition(770, 100);
 			case 'house' | 'house-night' | 'house-sunset':
 				dad.setPosition(50, 270);
 				if (dadmirror != null)
