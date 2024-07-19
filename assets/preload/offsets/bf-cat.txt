@@ -1,0 +1,15 @@
+idle 0 0
+idle-alt 0 0
+singUP 1 -3
+singRIGHT -8 3
+singLEFT 8 -2
+singDOWN -10 0
+singUPmiss 1 -3
+singRIGHTmiss -10 1
+singLEFTmiss 12 -6
+singDOWNmiss -11 -9
+hey -3 5
+ayo 0 0
+firstDeath -10 1
+deathLoop 12 -6
+deathConfirm -11 -9
